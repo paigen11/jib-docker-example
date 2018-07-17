@@ -1,12 +1,13 @@
-# Sample 04
+# Jib Example
 
-Each sample contained within has a readme corresponding to it. To see the coolest implementation of docker-compose, follow the instructions below.
-
-This demonstrates the versioned implementation of Docker using docker-compose and Nginx.
+The simplest Docker implementation ever. No knowledge of Docker is necessary to build a Docker image and run it from the command line with the help of Jib.
+Further documentation for Jib can be found here: https://github.com/GoogleContainerTools/jib.
 
 To use:
 
-* `docker-compose build`
-* `docker-compose up`
-* Go to http://localhost/java/v1/ (or whichever version you'd like to see)
-* And go to http://localhost/node/v1/ (or whichever version you'd like to see)
+* `./gradlew jibDockerBuild' to build locally
+* `./gradlew jib --image=java-example:1.0.0-SNAPSHOT` to build and deploy to Docker Hub
+
+To run:
+
+* `docker run -p 8080:8080 java-example:1.0.0-SNAPSHOT`

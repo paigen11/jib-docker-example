@@ -11,6 +11,9 @@ buildscript {
 		classpath('gradle.plugin.com.palantir.gradle.docker:gradle-docker:0.13.0')
 	}
 }
+plugins {
+	id 'com.google.cloud.tools.jib' version '0.9.6'
+}
 
 group = 'paigen11'
 
@@ -25,6 +28,8 @@ bootJar {
 	baseName = 'java-example'
 }
 
+
+version '1.0.0-SNAPSHOT'
 repositories {
 	mavenCentral()
 }
@@ -52,4 +57,18 @@ docker {
 
 //	build argument provided for docker pointing to jar file
 	buildArgs(['JAR_FILE': "${bootJar.archiveName}"])
+}
+
+jib {
+	from {
+		image = 'openjdk:8-jdk-alpine'
+	}
+//	to {
+//		image = 'shana02:6000/java-example'
+//	}
+	container {
+		jvmFlags = ['-Xms512m', '-Xdebug']
+		mainClass = 'hello.Application'
+	}
+//	allowInsecureRegistries=true
 }
