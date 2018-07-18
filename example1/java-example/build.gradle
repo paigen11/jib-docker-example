@@ -11,6 +11,7 @@ buildscript {
 		classpath('gradle.plugin.com.palantir.gradle.docker:gradle-docker:0.13.0')
 	}
 }
+
 plugins {
 	id 'com.google.cloud.tools.jib' version '0.9.6'
 }
@@ -43,7 +44,7 @@ dependencies {
 }
 
 task wrapper(type: Wrapper) {
-	distributionUrl = "https://maven.artifactory.homedepot.com/artifactory/gradle-binaries-cache/distributions/gradle-4.7-all.zip"
+	distributionUrl = "http://services.gradle.org/distributions-snapshots/gradle-4.8.1-bin.zip"
 }
 
 docker {
