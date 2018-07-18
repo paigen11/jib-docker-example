@@ -5,9 +5,6 @@ Further documentation for Jib can be found here: https://github.com/GoogleContai
 
 To use:
 
+* From the root directory, `cd example1/java-example`
 * `./gradlew jibDockerBuild` to build locally
-* `./gradlew jib --image=java-example:1.0.0-SNAPSHOT` to build and deploy to Docker Hub
-
-To run:
-
 * `docker run -p 8080:8080 java-example:1.0.0-SNAPSHOT`

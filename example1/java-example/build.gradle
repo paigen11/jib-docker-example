@@ -64,9 +64,6 @@ jib {
 	from {
 		image = 'openjdk:8-jdk-alpine'
 	}
-//	to {
-//		image = 'shana02:6000/java-example'
-//	}
 	container {
 		jvmFlags = ['-Xms512m', '-Xdebug']
 		mainClass = 'hello.Application'
