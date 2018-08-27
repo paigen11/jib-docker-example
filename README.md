@@ -6,13 +6,13 @@ Further documentation for Jib can be found here: https://github.com/GoogleContai
 ###To build an image and run a Docker container locally:
 
 * From the root directory, `cd example1/java-example`
-* `./gradlew jibDockerBuild` to build locally
+* `gradle jibDockerBuild` to build locally
 * `docker run -p 8080:8080 java-example:1.0.0-SNAPSHOT`
 
 ###To build a docker image locally:
 
 * From the root directory, `cd example1/java-example`
-* `./gradlew jibExportDockerContext` to build the image
+* `gradle jibExportDockerContext` to build the image
 * From that directory, `cd build/jib-docker-context` and then you can open up the new Dockerfile that's been generated.
 
 ###To deploy a docker image to Docker Hub, Artifactory or a previously established repo on your local machine:
@@ -34,5 +34,5 @@ jib {
 	allowInsecureRegistries=true
 }
 ```
-* `./gradlew jib` to build and deploy the image to Docker Hub (or wherever your artifacts are stored)
+* `gradle jib` to build and deploy the image to Docker Hub (or wherever your artifacts are stored)
 

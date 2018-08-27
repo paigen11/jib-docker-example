@@ -1,0 +1,9 @@
+*.log
+*.gbdxm
+*.DS_Store
+
+.gradle
+.idea
+
+example1/java-example/.gradle
+example1/java-example/build
