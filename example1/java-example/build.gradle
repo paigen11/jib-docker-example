@@ -7,7 +7,6 @@ buildscript {
 	}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.2.RELEASE")
-		classpath('gradle.plugin.com.palantir.gradle.docker:gradle-docker:0.13.0')
 	}
 }
 
@@ -40,17 +39,13 @@ dependencies {
 	testCompile("org.springframework.boot:spring-boot-starter-test")
 }
 
-// auth creds supplied in `~/.gradle/gradle.properties
+// auth creds supplied in `~/.gradle/gradle.properties if needed
 jib {
 	from {
 		image = 'openjdk:8-jdk-alpine'
 	}
 	to {
-		image = 'paigen11/jib-example'
-		auth {
-			username = "${username}"
-			password = "${password}"
-		}
+		image = 'localhost:5000/jib-example'
 	}
 	container {
 		jvmFlags = ['-Xms512m', '-Xdebug']
